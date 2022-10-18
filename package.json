@@ -1,0 +1,16 @@
+{
+  "name": "poc-wmf",
+  "version": "1.0.0",
+  "description": "",
+  "main": "webpack.config.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@module-federation/fmr": "^0.0.7",
+    "@types/webpack-dev-server": "^4.7.2",
+    "html-webpack-plugin": "^5.5.0",
+    "typescript": "^4.8.4",
+    "webpack": "^5.74.0"
+  }
+}
