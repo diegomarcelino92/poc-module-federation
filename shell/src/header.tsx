@@ -14,4 +14,5 @@ const StyledHeader = styled.header`
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid #b85450;
+  color: #b85450;
 `

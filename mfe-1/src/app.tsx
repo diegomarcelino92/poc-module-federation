@@ -7,11 +7,10 @@ import { Container } from './styles'
 import { useCounter } from './provider'
 import { ErrorBoundary } from './error-boundary'
 
-const Mfe3 = lazy(() =>
-  import('mfe3/app').catch(() => import('./error-boundary'))
-)
-
-// const Mfe3 = lazy(() => import('mfe3/app'))
+// const Mfe3 = lazy(() =>
+//   import('mfe3/app').catch(() => import('./error-boundary'))
+// )
+const Mfe3 = lazy(() => import('mfe3/app'))
 
 export const App: React.FC = () => {
   const { increment } = useCounter()
@@ -24,7 +23,7 @@ export const App: React.FC = () => {
       </Wrapper>
 
       <Links>
-        <Link to="/mfe1">Mfe - 1</Link>
+        <Link to="">Mfe - 1</Link>
         <Link to="mfe3">Mfe - 3</Link>
       </Links>
 
@@ -45,7 +44,7 @@ export const App: React.FC = () => {
   )
 }
 
-const Home = () => <img src="/react.jpeg"></img>
+const Home = () => <h3>Hello, i am a component of mfe1</h3>
 
 const Wrapper = styled.div`
   display: flex;
@@ -57,6 +56,7 @@ const Wrapper = styled.div`
 const Button = styled.button`
   background-color: #dae8fc;
   border: 1px solid #6c8ebf;
+  color: #6c8ebf;
   border-radius: 4px;
   cursor: pointer;
   padding: 5px 10px;
@@ -65,11 +65,16 @@ const Button = styled.button`
 const StyledContainer = styled(Container)`
   width: 100%;
   height: 100%;
+  color: #6c8ebf;
 `
 
 const Links = styled.div`
   display: flex;
   gap: 10px;
+
+  a {
+    color: #6c8ebf;
+  }
 `
 
 export default App

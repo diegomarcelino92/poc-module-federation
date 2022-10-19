@@ -21,6 +21,7 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   font-size: 12px;
+  color: #d79b00;
 `
 
 export default App

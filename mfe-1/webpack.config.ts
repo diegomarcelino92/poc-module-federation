@@ -5,8 +5,6 @@ import * as path from 'path'
 import { dependencies } from './package.json'
 import { createConfig } from '../webpack.config'
 
-const { MFLiveReloadPlugin } = require('@module-federation/fmr')
-
 const name = 'mfe1'
 
 const config = createConfig({
@@ -49,12 +47,6 @@ const federation = new container.ModuleFederationPlugin({
   }
 })
 
-const hotreload = new MFLiveReloadPlugin({
-  port: 3000, // the port your app runs on
-  container: name // the name of your app, must be unique
-})
-
-// config.plugins.push(hotreload)
 config.plugins.push(federation)
 
 export default config

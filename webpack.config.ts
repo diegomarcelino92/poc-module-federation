@@ -1,6 +1,8 @@
 import * as HtmlWebpackPlugin from 'html-webpack-plugin'
 import { Configuration } from 'webpack'
 
+const { MFLiveReloadPlugin } = require('@module-federation/fmr')
+
 interface WebpackConfigInput {
   outputPath: string
   htmlPath: string
@@ -22,10 +24,7 @@ export const createConfig = (config: WebpackConfigInput): WebpackConfig => ({
   devServer: {
     historyApiFallback: true,
     port: config.port,
-    hot: true
-  },
-  optimization: {
-    runtimeChunk: false
+    hot: false
   },
   module: {
     rules: [
@@ -37,9 +36,14 @@ export const createConfig = (config: WebpackConfigInput): WebpackConfig => ({
     ]
   },
   plugins: [
+    new MFLiveReloadPlugin({
+      port: config.port,
+      container: config.name
+    }),
     new HtmlWebpackPlugin({
       template: config.htmlPath,
-      inject: true
+      inject: true,
+      publicPath: '/'
     })
   ]
 })

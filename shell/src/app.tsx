@@ -12,36 +12,38 @@ const Mfe1Provider = lazy(() => import('mfe1/provider'))
 const Mfe2 = lazy(() => import('mfe2/app'))
 
 export const App: React.FC = () => (
-  <Suspense fallback="loading...">
-    <Mfe1Provider>
-      <Header>
+  <Mfe1Provider>
+    <Header>
+      <Suspense fallback="loading...">
         <Mfe1mini />
-      </Header>
+      </Suspense>
+    </Header>
 
-      <Content>
-        <Router>
-          <Links>
-            <Link to="/">Shell</Link>
-            <Link to="/mfe1">MFE - 1</Link>
-            <Link to="/mfe2">MFE - 2</Link>
-          </Links>
+    <Content>
+      <Router>
+        <Links>
+          <Link to="/">Shell</Link>
+          <Link to="mfe1">MFE - 1</Link>
+          <Link to="mfe2">MFE - 2</Link>
+        </Links>
 
+        <Suspense fallback="loading...">
           <Routes>
             <Route index element={<Home />} />
-            <Route path="/mfe1/*" element={<Mfe1 />} />
-            <Route path="/mfe2" element={<Mfe2 />} />
+            <Route path="mfe1/*" element={<Mfe1 />} />
+            <Route path="mfe2" element={<Mfe2 />} />
           </Routes>
-        </Router>
-      </Content>
+        </Suspense>
+      </Router>
+    </Content>
 
-      <Footer />
-    </Mfe1Provider>
-  </Suspense>
+    <Footer />
+  </Mfe1Provider>
 )
 
 const Home = () => (
   <HomeContainer>
-    <img src="/module-federation.png" />
+    <img src="http://localhost:3000/module-federation.png" />
   </HomeContainer>
 )
 
@@ -70,6 +72,8 @@ const Links = styled.div`
   padding-left: 30px;
 
   a {
-    color: #333;
+    color: #b85450;
   }
 `
+
+export default App

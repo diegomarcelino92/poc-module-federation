@@ -4,8 +4,6 @@ import * as path from 'path'
 import { dependencies } from './package.json'
 import { createConfig } from '../webpack.config'
 
-const { MFLiveReloadPlugin } = require('@module-federation/fmr')
-
 const name = 'shell'
 
 const config = createConfig({
@@ -24,7 +22,8 @@ const federation = new container.ModuleFederationPlugin({
     mfe2: 'mfe2@http://localhost:3002/remote-entry.js'
   },
   exposes: {
-    './store': './src/store'
+    './store': './src/store',
+    './app': './src/app'
   },
   shared: {
     'styled-components': {
@@ -46,12 +45,6 @@ const federation = new container.ModuleFederationPlugin({
   }
 })
 
-const hotreload = new MFLiveReloadPlugin({
-  port: 3000, // the port your app runs on
-  container: name // the name of your app, must be unique
-})
-
-// config.plugins.push(hotreload)
 config.plugins.push(federation)
 
 export default config

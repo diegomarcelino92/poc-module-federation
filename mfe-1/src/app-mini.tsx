@@ -53,6 +53,7 @@ const Button = styled.button`
   padding: 10px;
   border-radius: 5px;
   cursor: pointer;
+  color: #6c8ebf;
 `
 
 const Menu = styled.div`
@@ -62,6 +63,7 @@ const Menu = styled.div`
 
 const MenuContainer = styled(Container)`
   justify-content: center;
+  color: #6c8ebf;
 `
 
 export default AppMini

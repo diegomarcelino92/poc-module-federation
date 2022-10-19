@@ -13,4 +13,5 @@ const StyledFooter = styled.footer`
   align-items: center;
   padding: 16px 8px;
   border-top: 1px solid #b85450;
+  color: #b85450;
 `

@@ -40,6 +40,7 @@ const Container = styled.div`
   align-items: center;
   border: 1px solid #82b366;
   gap: 10px;
+  color: #82b366;
 `
 
 const StyledButton = styled.button`
@@ -48,6 +49,7 @@ const StyledButton = styled.button`
   border-radius: 4px;
   cursor: pointer;
   padding: 5px 10px;
+  color: #82b366;
 `
 
 export default App

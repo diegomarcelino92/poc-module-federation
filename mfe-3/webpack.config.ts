@@ -22,12 +22,11 @@ const federation = new container.ModuleFederationPlugin({
     './app': './src/app'
   },
   shared: {
-    'styled-components': {
-      singleton: true,
-      requiredVersion: '^5.0.0',
-      strictVersion: true,
-      version: dependencies['styled-components']
-    },
+    // 'styled-components': {
+    //   singleton: true,
+    //   strictVersion: true,
+    //   requiredVersion: dependencies['styled-components']
+    // },
     react: {
       singleton: true,
       requiredVersion: dependencies.react
