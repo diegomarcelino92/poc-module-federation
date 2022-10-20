@@ -6,6 +6,9 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "scripts": {
+    "bootstrap": "cd shell && yarn install && cd ../mfe-1 && yarn install && cd ../mfe-2 && yarn install && cd ../mfe-3 && yarn install"
+  },
   "devDependencies": {
     "@module-federation/fmr": "^0.0.7",
     "@types/webpack-dev-server": "^4.7.2",
