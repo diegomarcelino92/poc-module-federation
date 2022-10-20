@@ -2,6 +2,16 @@
 
 ## Scripts
 
-install dependencies in all applications
+Install dependencies in all applications
 
-` yarn bootstrap`
+`yarn bootstrap`
+
+### In each app:
+
+Start application
+
+`yarn start`
+
+Build application
+
+`yarn build`
