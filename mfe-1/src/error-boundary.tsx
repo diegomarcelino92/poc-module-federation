@@ -1,4 +1,5 @@
 import React, { PropsWithChildren } from 'react'
+import styled from 'styled-components'
 
 export class ErrorBoundary extends React.Component<
   PropsWithChildren,
@@ -26,6 +27,10 @@ export class ErrorBoundary extends React.Component<
   }
 }
 
-const Message = () => <h1>Houve um erro ao carregar o MFE</h1>
+const Message = () => <Title>There was an error loading the remote</Title>
+
+const Title = styled.h3`
+  color: #ee4b2b;
+`
 
 export default Message
